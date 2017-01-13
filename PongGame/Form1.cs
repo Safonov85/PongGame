@@ -95,7 +95,6 @@ namespace PongGame
 
         void PrintScore()
         {
-            //this.Name = "Player: " + scorePlayer + "  Computer: " + scoreComputer;
             this.Text = "Player: " + scorePlayer + "  Computer: " + scoreComputer;
         }
 
@@ -162,10 +161,6 @@ namespace PongGame
                     direction = Direction.LeftUp;
                 }
             }
-            //if (ball.x > 600)
-            //{
-            //    direction = Direction.LeftUp;
-            //}
         }
 
         void MoveP2()
@@ -210,7 +205,6 @@ namespace PongGame
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            //xPosition = e.X;
             Cursor.Hide();
             yPosition = e.Y;
         }
@@ -238,9 +232,7 @@ namespace PongGame
             scorePlayer = 0;
             scoreComputer = 0;
             PrintScore();
-            //dropsRect.Add(new Rectangle(RandomRowDrop(), dropBits, 9, 9));
             timer.Start();
-            //mainCube = new Rectangle(xPosition, yPosition, 9, 9);
         }
 
         void BallMiddlePosition()
@@ -248,19 +240,5 @@ namespace PongGame
             ball.x = this.Width / 2;
             ball.y = this.Height / 2;
         }
-
-        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        //{
-        //    if (keyData == Keys.Down)
-        //    {
-        //        yPositionP2 += speedP2;
-        //    }
-
-
-
-        //    return base.ProcessCmdKey(ref msg, keyData);
-        //}
-
-        
     }
 }
