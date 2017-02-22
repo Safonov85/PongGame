@@ -1,9 +1,0 @@
-c:\users\mindator\documents\visual studio 2015\Projects\PongGame\PongGame\bin\Debug\PongGame.exe.config
-c:\users\mindator\documents\visual studio 2015\Projects\PongGame\PongGame\bin\Debug\PongGame.exe
-c:\users\mindator\documents\visual studio 2015\Projects\PongGame\PongGame\bin\Debug\PongGame.pdb
-c:\users\mindator\documents\visual studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.csprojResolveAssemblyReference.cache
-c:\users\mindator\documents\visual studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.Form1.resources
-c:\users\mindator\documents\visual studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.Properties.Resources.resources
-c:\users\mindator\documents\visual studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.csproj.GenerateResource.Cache
-c:\users\mindator\documents\visual studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.exe
-c:\users\mindator\documents\visual studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.pdb

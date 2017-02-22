@@ -40,7 +40,8 @@ namespace PongGame
         private void timer_Tick(object sender, EventArgs e)
         {
             graphics.Clear(backgroundColor);
-            MoveP2();
+            //MoveP2();
+            ComputerMove();
             paddle = new Paddle(xPosition, yPosition);
             paddle2 = new Paddle(xPositionP2, yPositionP2);
             if(ball.x < 30)
@@ -138,7 +139,7 @@ namespace PongGame
             {
                 ball.x += speedBall;
                 ball.y -= speedBall;
-                if(ball.y < 20)
+                if(ball.y < 0)
                 {
                     direction = Direction.RightDown;
                 }
@@ -147,7 +148,7 @@ namespace PongGame
             {
                 ball.x -= speedBall;
                 ball.y -= speedBall;
-                if(ball.y < 20)
+                if(ball.y < 0)
                 {
                     direction = Direction.LeftDown;
                 }
@@ -160,6 +161,15 @@ namespace PongGame
                 {
                     direction = Direction.LeftUp;
                 }
+            }
+        }
+
+        void ComputerMove()
+        {
+            if(direction == Direction.RightDown || direction == Direction.RightUp)
+            {
+                float currentPlace = (ball.y - 30f) * 0.9f;
+                yPositionP2 = (int)currentPlace;
             }
         }
 

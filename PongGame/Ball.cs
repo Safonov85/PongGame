@@ -15,7 +15,6 @@ namespace PongGame
         public float y = 0.0F;
         float width = 10.0F;
         float height = 10.0F;
-        
 
         public void CreateBall(Graphics graphics)
         {
