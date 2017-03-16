@@ -168,7 +168,7 @@ namespace PongGame
         {
             if(direction == Direction.RightDown || direction == Direction.RightUp)
             {
-                float currentPlace = (ball.y - 30f) * 0.9f;
+                float currentPlace = (ball.y) * 0.8f;
                 yPositionP2 = (int)currentPlace;
             }
         }
