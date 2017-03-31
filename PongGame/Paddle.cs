@@ -14,6 +14,7 @@ namespace PongGame
         public int xPaddle = 10;
         public int yPaddle = 60;
 
+        // Constructor for a new Paddle object
         public Paddle(int xPosition, int yPosition)
         {
             paddle = new Rectangle(xPosition, yPosition, xPaddle, yPaddle);

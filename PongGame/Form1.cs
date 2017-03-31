@@ -37,6 +37,7 @@ namespace PongGame
         Ball ball;
         Direction direction = Direction.LeftDown;
 
+        // What happens every frame
         private void timer_Tick(object sender, EventArgs e)
         {
             graphics.Clear(backgroundColor);
@@ -94,6 +95,7 @@ namespace PongGame
             graphicsOverride.DrawImage(bitmap, 0, 0, this.Width, this.Height);
         }
 
+        // Gets the new score on the screen
         void PrintScore()
         {
             this.Text = "Player: " + scorePlayer + "  Computer: " + scoreComputer;
@@ -164,6 +166,7 @@ namespace PongGame
             }
         }
 
+        // Computer's paddel control
         void ComputerMove()
         {
             if(direction == Direction.RightDown || direction == Direction.RightUp)
@@ -173,6 +176,7 @@ namespace PongGame
             }
         }
 
+        // Second player, Instead of computer
         void MoveP2()
         {
             if(down == true)
@@ -225,6 +229,7 @@ namespace PongGame
             LoadInstances();
         }
 
+        // Loading a New game
         void LoadInstances()
         {
             brush = new System.Drawing.SolidBrush(System.Drawing.Color.FromArgb(250, 250, 250));
@@ -245,6 +250,7 @@ namespace PongGame
             timer.Start();
         }
 
+        // Places ball in the middle of the screen
         void BallMiddlePosition()
         {
             ball.x = this.Width / 2;
