@@ -31,6 +31,7 @@ namespace PongGame
         int speedP2;
         bool up, down;
         int scorePlayer, scoreComputer;
+        int compMovePointsIncrease = 0;
 
         Paddle paddle;
         Paddle paddle2;
@@ -42,14 +43,21 @@ namespace PongGame
         {
             graphics.Clear(backgroundColor);
             //MoveP2();
-            ComputerMove();
+            if (true)//direction == Direction.RightDown || direction == Direction.RightUp
+            {
+                ComputerMove();
+            }
+            else
+            {
+                compMovePointsIncrease = 0;
+            }
             paddle = new Paddle(xPosition, yPosition);
             paddle2 = new Paddle(xPositionP2, yPositionP2);
-            if(ball.x < 30)
+            if (ball.x < 30)
             {
                 if (PaddleP1Collision())
                 {
-                    if(direction == Direction.LeftDown)
+                    if (direction == Direction.LeftDown)
                     {
                         direction = Direction.RightDown;
                     }
@@ -65,11 +73,11 @@ namespace PongGame
                     BallMiddlePosition();
                 }
             }
-            if(ball.x > 560)
+            if (ball.x > 560)
             {
                 if (PaddleP2Collission())
                 {
-                    if(direction == Direction.RightDown)
+                    if (direction == Direction.RightDown)
                     {
                         direction = Direction.LeftDown;
                     }
@@ -103,8 +111,9 @@ namespace PongGame
 
         bool PaddleP1Collision()
         {
-            if(yPosition < ball.y && ball.y < yPosition + paddle.yPaddle)
+            if (yPosition < ball.y && ball.y < yPosition + paddle.yPaddle)
             {
+                speedBall += 0.3F;
                 return true;
             }
 
@@ -113,49 +122,45 @@ namespace PongGame
 
         bool PaddleP2Collission()
         {
-            if(yPositionP2 < ball.y && ball.y < yPositionP2 + paddle2.yPaddle)
+            if (yPositionP2 < ball.y && ball.y < yPositionP2 + paddle2.yPaddle)
             {
+                speedBall += 0.3F;
                 return true;
             }
 
             return false;
         }
 
-        void DetectPaddleCollision()
-        {
-
-        }
-
         void BounceWall()
         {
-            if(direction == Direction.RightDown)
+            if (direction == Direction.RightDown)
             {
                 ball.x += speedBall;
                 ball.y += speedBall;
-                if(ball.y > 380)
+                if (ball.y > 380)
                 {
                     direction = Direction.RightUp;
                 }
             }
-            else if(direction == Direction.RightUp)
+            else if (direction == Direction.RightUp)
             {
                 ball.x += speedBall;
                 ball.y -= speedBall;
-                if(ball.y < 0)
+                if (ball.y < 0)
                 {
                     direction = Direction.RightDown;
                 }
             }
-            else if(direction == Direction.LeftUp)
+            else if (direction == Direction.LeftUp)
             {
                 ball.x -= speedBall;
                 ball.y -= speedBall;
-                if(ball.y < 0)
+                if (ball.y < 0)
                 {
                     direction = Direction.LeftDown;
                 }
             }
-            else if(direction == Direction.LeftDown)
+            else if (direction == Direction.LeftDown)
             {
                 ball.x -= speedBall;
                 ball.y += speedBall;
@@ -169,17 +174,19 @@ namespace PongGame
         // Computer's paddel control
         void ComputerMove()
         {
-            if(direction == Direction.RightDown || direction == Direction.RightUp)
+            float currentPlace = yPosition - compMovePointsIncrease;
+            yPositionP2 = (int)currentPlace;
+            if (yPositionP2 < 0)
             {
-                float currentPlace = (ball.y) * 0.8f;
-                yPositionP2 = (int)currentPlace;
+                yPositionP2 = 0;
             }
+            compMovePointsIncrease += 3;
         }
 
         // Second player, Instead of computer
         void MoveP2()
         {
-            if(down == true)
+            if (down == true)
             {
                 if (yPositionP2 > 330)
                 {
@@ -187,7 +194,7 @@ namespace PongGame
                 }
                 yPositionP2 += speedP2;
             }
-            if(up == true)
+            if (up == true)
             {
                 yPositionP2 -= speedP2;
             }
@@ -195,7 +202,7 @@ namespace PongGame
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down)
             {
                 down = false;
             }
@@ -207,7 +214,7 @@ namespace PongGame
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down)
             {
                 down = true;
             }
@@ -255,6 +262,7 @@ namespace PongGame
         {
             ball.x = this.Width / 2;
             ball.y = this.Height / 2;
+            speedBall = 3.0F;
         }
     }
 }
