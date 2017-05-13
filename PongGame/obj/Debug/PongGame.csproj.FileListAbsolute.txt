@@ -1,0 +1,9 @@
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\PongGame\PongGame\bin\Debug\PongGame.exe.config
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\PongGame\PongGame\bin\Debug\PongGame.exe
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\PongGame\PongGame\bin\Debug\PongGame.pdb
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.csprojResolveAssemblyReference.cache
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.Form1.resources
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.Properties.Resources.resources
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.csproj.GenerateResource.Cache
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.exe
+C:\Users\MinDator\Documents\Visual Studio 2015\Projects\PongGame\PongGame\obj\Debug\PongGame.pdb

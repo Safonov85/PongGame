@@ -32,6 +32,7 @@ namespace PongGame
         bool up, down;
         int scorePlayer, scoreComputer;
         int compMovePointsIncrease = 0;
+        float currentBallPosition;
 
         Paddle paddle;
         Paddle paddle2;
@@ -43,13 +44,14 @@ namespace PongGame
         {
             graphics.Clear(backgroundColor);
             //MoveP2();
-            if (true)//direction == Direction.RightDown || direction == Direction.RightUp
+            if (direction == Direction.RightDown || direction == Direction.RightUp)//direction == Direction.RightDown || direction == Direction.RightUp
             {
                 ComputerMove();
             }
             else
             {
                 compMovePointsIncrease = 0;
+                currentBallPosition = ball.y;
             }
             paddle = new Paddle(xPosition, yPosition);
             paddle2 = new Paddle(xPositionP2, yPositionP2);
@@ -174,7 +176,7 @@ namespace PongGame
         // Computer's paddel control
         void ComputerMove()
         {
-            float currentPlace = yPosition - compMovePointsIncrease;
+            float currentPlace = currentBallPosition + compMovePointsIncrease;
             yPositionP2 = (int)currentPlace;
             if (yPositionP2 < 0)
             {
